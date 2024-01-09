@@ -7,7 +7,7 @@ import { useAuth } from "../context/useContext";
 import MenuDesplegable from "./MenuDesplegable";
 
 const Header = () => {
-  const { themma, onclickTemma, onclickMenu, mostarMenu, menu } = useAuth();
+  const { themma, onclickTemma, onclickMenu,menu } = useAuth();
 
   console.log(menu);
 
