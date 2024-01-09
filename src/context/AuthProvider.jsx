@@ -2,18 +2,33 @@ import { useState } from "react";
 import { AuthContext } from "./authContext";
 
 export const AuthProvider = ({ children }) => {
-  const [temma, setTemma] = useState("light");
+  const [themma, setThemma] = useState("light");
+  const [menu, setmenu] = useState(false)
+  const [estadoMenu, setEstadoMenu] = useState("ocultarMenu")
+
 
   const onclickTemma = () => {
-    if (temma == "dark") {
-      setTemma("light");
+    if (themma == "dark") {
+      setThemma("light");
     } else {
-      setTemma("dark");
+      setThemma("dark");
     }
   };
 
+  const onclickMenu = () => {
+    if (menu == false) {
+      setmenu(true)
+      setEstadoMenu("mostrarMenu")
+    } else {
+      setmenu(false)
+      setEstadoMenu("ocultarMenu")
+    }
+  }
+
+  
+
   return (
-    <AuthContext.Provider value={{ temma, onclickTemma }}>
+    <AuthContext.Provider value={{ themma, onclickTemma, estadoMenu, onclickMenu, menu }}>
       {children}
     </AuthContext.Provider>
   );

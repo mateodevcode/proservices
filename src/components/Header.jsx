@@ -4,19 +4,23 @@ import { FaMoon } from "react-icons/fa";
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdOutlineApps } from "react-icons/md";
 import { useAuth } from "../context/useContext";
+import MenuDesplegable from "./MenuDesplegable";
 
 const Header = () => {
-  const { temma, onclickTemma } = useAuth();
+  const { themma, onclickTemma, onclickMenu, mostarMenu, menu } = useAuth();
+
+  console.log(menu);
 
   return (
-    <nav
-      className={`w-full flex flex-row justify-between items-center ${
-        temma == "light"
+    <>
+      <nav
+      className={`w-full flex md:flex-row justify-between items-center ${
+        themma == "light"
           ? "bg-white shadow-lg shadow-gray-500/50"
           : "bg-gray-800 shadow-lg shadow-red-700/20"
-      } ${temma}`}
+      } ${themma}`}
     >
-      <div className="ml-16 flex flex-row justify-center items-center">
+      <div className="md:ml-16 sm:ml-2 flex flex-row justify-center items-center">
         <img
           className="w-8 rounded-xl my-1"
           src={logoProservices[0].img}
@@ -28,8 +32,8 @@ const Header = () => {
           alt="Logo de imagen principal de bienvenida"
         />
       </div>
-      <div>
-        <ul className="flex flex-row justify-center items-center">
+      <div className="">
+        <ul className={`md:flex md:flex-row sm:flex-col justify-center items-center sm:hidden`}>
           <li className="mx-3 text-trueGray-800 font-semibold cursor-pointer text-sm">
             INICIO
           </li>
@@ -48,16 +52,21 @@ const Header = () => {
         </ul>
       </div>
       <div
-        className={`flex flex-row justify-center items-center ${temma} mr-16`}
-        onClick={onclickTemma}
+        className={`flex flex-row justify-center items-center ${themma} md:mr-16`}
       >
-        <MdOutlineLightMode
-          className={`text-xl ${temma == "light" ? "hidden" : "flex"}`}
-        />
-        <FaMoon className={`text-xl ${temma == "light" ? "flex" : "hidden"}`} />
-        <MdOutlineApps className="text-2xl mx-2" />
+        <div onClick={onclickTemma}>
+          <MdOutlineLightMode
+            className={`text-xl ${themma == "light" ? "hidden" : "flex"}`}
+          />
+          <FaMoon
+            className={`text-xl ${themma == "light" ? "flex" : "hidden"}`}
+          />
+        </div>
+        <MdOutlineApps className="text-2xl mx-2" onClick={onclickMenu} />
       </div>
     </nav>
+    <MenuDesplegable />
+    </>
   );
 };
 

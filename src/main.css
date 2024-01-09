@@ -1,10 +1,25 @@
 .light {
-    background-color: #06B6D4;
-    color: black;
+    background-color: #fff;
+    color: #1F2937;
 }
 
 
 .dark {
     background-color: #1F2937;
     color: white;
+    
+}
+
+.mostrarMenu {
+    visibility: visible;
+    position: absolute;
+    left: 1%;
+    transition: all ease-in 1s;
+}
+
+.ocultarMenu {
+    visibility: hidden;
+    position: absolute;
+    left: -100%;
+    transition: all ease 1s;
 }

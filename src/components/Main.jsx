@@ -1,5 +1,13 @@
+import { useAuth } from "../context/useContext";
+
+
 const Main = () => {
-  return <div className="h-96"></div>;
+  const { themma } = useAuth()
+
+  return <div className={`${themma} h-screen`}>
+    
+
+  </div>;
 };
 
 export default Main;

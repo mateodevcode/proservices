@@ -1,9 +1,9 @@
 import { useAuth } from "../context/useContext";
 
 const Footer = () => {
-  const { temma } = useAuth()
+  const { themma } = useAuth()
   return (
-    <div className={`flex flex-row justify-around items-center ${temma}`}>
+    <div className={`flex flex-row justify-around items-center ${themma}`}>
       <div>
         <p>Hola</p>
         <p>Hola</p>
