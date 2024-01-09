@@ -12,8 +12,8 @@ const Header = () => {
     <nav
       className={`w-full flex flex-row justify-between items-center ${
         temma == "light"
-          ? "bg-cyan-500 shadow-lg shadow-cyan-500/50"
-          : "bg-gray-800 shadow-lg shadow-gray-700"
+          ? "bg-white shadow-lg shadow-gray-500/50"
+          : "bg-gray-800 shadow-lg shadow-red-700/20"
       } ${temma}`}
     >
       <div className="ml-16 flex flex-row justify-center items-center">
