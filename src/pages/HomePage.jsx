@@ -5,9 +5,10 @@ import Main from "../components/Main";
 const HomePage = () => {
   return (
     <div>
-      <Header />
+       <Header />
       <Main />
-      <Footer />
+       <Footer /> 
+      
     </div>
   );
 };

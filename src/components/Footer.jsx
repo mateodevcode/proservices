@@ -1,24 +1,13 @@
 import { useAuth } from "../context/useContext";
 
 const Footer = () => {
-  const { themma } = useAuth()
+  const { themma } = useAuth();
   return (
     <div className={`flex flex-row justify-around items-center ${themma}`}>
-      <div>
-        <p>Hola</p>
-        <p>Hola</p>
-        <p>Hola</p>       
-      </div>
-      <div>
-        <p>Hola</p>
-        <p>Hola</p>
-        <p>Hola</p>       
-      </div>
-      <div>
-        <p>Hola</p>
-        <p>Hola</p>
-        <p>Hola</p>       
-      </div>
+      <p>
+        Todos los derechos reservados. Desarrollado por{" "}
+        <strong>Rockasus</strong> © 2023
+      </p>
     </div>
   );
 };
