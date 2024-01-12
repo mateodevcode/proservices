@@ -1,34 +1,26 @@
 import "../main.css";
-import logoProservices from "../data/Header";
 import { FaMoon } from "react-icons/fa";
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdOutlineApps } from "react-icons/md";
 import { useAuth } from "../context/useContext";
 import MenuDesplegable from "./MenuDesplegable";
+import Logolight from "./Logolight.jsx";
+import Logodark from "./Logodark.jsx";
 
 const Header = () => {
-  const { themma, onclickTemma, onclickMenu, menu } = useAuth();
-
-  console.log(menu);
+  const { themma, onclickTemma, onclickMenu } = useAuth();
 
   return (
     <>
       <nav
-        className={`w-full flex md:flex-row justify-between items-center ${
-          themma == "light" ? "bg-white " : "bg-gray-800 "
-        } ${themma}`}
+        className={`w-full flex md:flex-row justify-between items-center border-b-2 ${
+          themma == "light"
+            ? "bg-white  border-black text-black"
+            : "bg-black border-red-700 text-white "
+        }`}
       >
         <div className="md:ml-16 sm:ml-2 flex flex-row justify-center items-center">
-          <img
-            className="w-8 rounded-xl my-1"
-            src={logoProservices[0].img}
-            alt="Logo de imagen principal de bienvenida"
-          />
-          <img
-            className="w-36 rounded-xl my-1"
-            src={logoProservices[1].img}
-            alt="Logo de imagen principal de bienvenida"
-          />
+        {themma == "light" ? <Logolight /> : <Logodark />}
         </div>
         <div className="">
           <ul
