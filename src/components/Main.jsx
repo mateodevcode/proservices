@@ -1,13 +1,13 @@
 import { useAuth } from "../context/useContext";
-
+import Gallery from "./Gallery";
 
 const Main = () => {
-  const { themma } = useAuth();  
+  const { themma } = useAuth();
   return (
-    <div className={`h-screen ${themma}`}>
-      
+    <div className={` ${themma}`}>
+      <Gallery />
     </div>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;
