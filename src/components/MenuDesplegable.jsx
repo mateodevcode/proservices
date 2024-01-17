@@ -5,9 +5,9 @@ const MenuDesplegable = () => {
   const { themma, estadoMenu, menu } = useAuth();
 
   return (
-    <div className={` ${estadoMenu} `}>
+    <div className={` ${estadoMenu} `} >
       <ul
-        className={`flex flex-col  md:hidden justify-center items-start ${themma} ${
+        className={`flex flex-col  md:hidden justify-center items-start absolute ${themma} ${
           menu == false ? "sm:hidden" : "sm:flex"
         }`}
       >

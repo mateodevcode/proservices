@@ -19,7 +19,7 @@ const Header = () => {
             : "bg-black border-red-700 text-white "
         }`}
       >
-        <div className="md:ml-16 sm:ml-2 flex flex-row justify-center items-center">
+        <div className="md:ml-16 sm:ml-2 flex flex-row justify-center items-center cursor-pointer">
         {themma == "light" ? <Logolight /> : <Logodark />}
         </div>
         <div className="">
@@ -46,7 +46,7 @@ const Header = () => {
         <div
           className={`flex flex-row justify-center items-center ${themma} md:mr-16`}
         >
-          <div onClick={onclickTemma}>
+          <div onClick={onclickTemma} className="cursor-pointer">
             <MdOutlineLightMode
               className={`text-xl ${themma == "light" ? "hidden" : "flex"}`}
             />
@@ -55,8 +55,8 @@ const Header = () => {
             />
           </div>
           <MdOutlineApps
-            className="text-2xl mx-2 md:hidden"
-            onClick={onclickMenu}
+            className="text-2xl mx-2 md:hidden cursor-pointer"
+            onClick={onclickMenu}x
           />
         </div>
       </nav>
