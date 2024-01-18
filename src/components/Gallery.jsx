@@ -1,21 +1,17 @@
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
+import { imagenes } from "../data/Main";
 
 const Gallery = () => {
-  const images = [
-    {
-      original: "https://picsum.photos/id/1050/1600/600/",
-      originalAlt:"Imagen inicio"
-    },
-    {
-      original: "https://cdn.pixabay.com/photo/2014/10/16/21/16/photovoltaic-491702_1280.jpg",
-    },
-    {
-      original: "https://picsum.photos/id/1019/1600/600/",
-    },
-  ];
+  const images = imagenes.map((imagen) => {
+    return {
+      original: imagen.original,
+      originalAlt: imagen.originalAlt,
+    };
+  });
+
   return (
-    <div>
+    <div className="w-full h-auto">
       <ImageGallery
         items={images}
         showFullscreenButton={false}
