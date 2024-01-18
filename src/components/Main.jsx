@@ -4,7 +4,7 @@ import Gallery from "./Gallery";
 const Main = () => {
   const { themma } = useAuth();
   return (
-    <div className={` ${themma}`}>
+    <div className=  {`h-screen  ${themma}`}>
       <Gallery />
     </div>
   );
